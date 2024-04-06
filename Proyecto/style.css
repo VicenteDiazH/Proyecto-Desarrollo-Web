@@ -1,0 +1,50 @@
+body{
+    font-family:'Courier New', Courier, monospace;
+    margin: 0;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    background-color: black;
+    padding: 10px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    height: 50px;
+    margin: 10px;
+}
+.nombre-tienda{
+color: rgb(255, 255, 255);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.navlink img{
+    height: 60px;
+  
+}
+ .navlink{
+    
+    display:grid;
+    
+}
+.micuenta{
+    font-family: sans-serif;
+    font-size: small;
+
+}
+.container{
+    position: relative;
+}
+input{
+    height: 30px;
+   
+}
+
+
+
