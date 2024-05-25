@@ -1,0 +1,288 @@
+@font-face {
+    font-family: "ola";
+    src: url(./fonts/In\ die\ busillis.ttf);
+  }
+  @font-face {
+    font-family: "ola2";
+    src: url(./fonts/Masberco.otf);
+  }
+  #row1{
+    justify-content: center;
+    margin-top: 60px;
+  
+  }
+  body{
+    background-color: rgb(15, 15, 15);
+    text-decoration: none;
+  }
+  #navb{
+   
+    background-color: rgb(15, 15, 15);
+    border-bottom: 1px solid #fff;
+    border-color: rgb(51, 51, 51);
+    height: 90px;
+  }
+  a{
+    color: white;
+  }
+  
+  #ola1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  #img1{
+    height: 600px;
+    width: 1000px;
+  }
+  
+  .card-size{
+    width: 300px;
+    height: 400px;
+  }
+  
+  .card-title-color{
+  color: white;
+  }
+  
+  .card-text-color{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .card-artist-color{
+    color: white;
+  }
+  
+  .image-box {
+    width: 100%; 
+    height: 300px; 
+    overflow: hidden;
+  }
+  .image-box img {
+    width: 100%; 
+    height: auto; 
+  }
+  
+  #divv{
+  padding-top: 100px;
+  }
+  
+  form{
+padding-left: 150px;  
+padding-top: 100px;
+}
+#box-login{
+  height: 300px;
+  padding-bottom: 550px;
+}
+  
+  #divrayo1{
+    animation: parpadeo 4s infinite;
+    background-size: auto 100%;
+   background-position: center;
+    background-repeat: no-repeat;
+    background-image:url("./Design/Pngtreeblue_line_lightning_4762617\ 2.png");
+    height:100%;
+  }
+  
+  #divrayo2{
+    animation: parpadeo 3s infinite;
+    background-size: auto 100%;
+   background-position: center;
+    background-repeat: no-repeat;
+    background-image:url("./Design/Pngtreeblue_line_lightning_4762617.png");
+    height:100%;
+  }
+  
+  #main{
+    justify-content: center;
+  
+  }
+  
+  #sech{
+    width: 1000px;
+  }
+  
+  #mic{
+    padding-left: 5px;
+    display: grid;
+    height: 50px;
+  }
+  
+  .micuenta{
+    padding-left: 10px;
+    display:grid;
+  }
+  #loginregister{
+ 
+    display: grid;
+    height: 50px;
+    padding-left: 15px;
+  }
+  #micuentaa{
+    font-family: sans-serif;
+    padding-right: 20px;
+    font-size: small;
+    font-weight:lighter;
+     text-decoration: none;
+     font-stretch: ultra-condensed;
+     font-size: small;
+  }
+  
+  #clean-text{
+    text-decoration: none;
+  }
+  
+  #imagen-producto{
+    padding-top: 80px;
+    height: 450px;
+  }
+  @keyframes parpadeo {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  form{
+    color: #fff;
+  }
+  #tienda{
+    font-family:"ola2", Arial, Helvetica, sans-serif;
+    justify-content: center;
+    padding-right: 1000px;
+    font-size:xx-large;
+    padding-bottom: 10px;
+    display: flex;
+    
+  }
+  
+  #name{
+    justify-content: center;
+   padding-right: 10px;
+   padding-bottom: 10px;
+   font-family: "ola2";
+  }
+  
+  #logoTienda{
+    height: 65px;
+  }
+  
+  h1{
+    justify-content: center;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+  }
+  
+  .carousel-title {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #product {
+    clear: both;
+    font-size: 15px;
+  }
+#yatienescuenta{
+  display: flex;
+padding-top: 15px;
+}
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: open sans,sans-serif;
+    font-display: swap;
+  }
+  .titulo_marca {
+    width: 770px;
+    float: right;
+    padding-bottom: 10px;
+    display: table;
+  }
+  
+  /* CSS de página por album*/
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(15, 15, 15);
+  }
+  
+  .box {
+    
+    display: flex;
+    width: 100%;
+    max-width: 1000px; 
+    background-color: (15,15,15);
+    box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.1);
+    border-radius: 5px;
+  }
+  
+  #comprar{
+    height: 55px;
+  }
+  #boton-comprar {
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+ 
+  }
+  .product-image {
+    width: 40%; 
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .product-details {
+    flex-grow: 1;
+    padding: 20px;
+    color: #ffffff;
+    text-align: justify; 
+  }
+  
+  .product-title {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: left; 
+  }
+  
+  .product-subtitle {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  #login_register{
+    font-family: sans-serif;
+  padding-right: 10px;
+    font-size: small;
+    font-weight:lighter;
+     text-decoration: none;
+     font-stretch: ultra-condensed;
+     font-size: small;
+  }
+
+  .product-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .product-description {
+    font-size: 16px;
+    color: #ffffff;
+    text-align: justify;
+  }
+  
