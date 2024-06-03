@@ -47,6 +47,15 @@ app.set('views', path.resolve(__dirname +'/views'));
 
 app.use("/",express.static(__dirname + "/public"));
 
+//se pueden hacer rutas
+app.get('/profile', (req, res) => {
+    res.render('wallet', {
+        nombreUsuario: 'Nombre del Usuario',
+        email: 'usuario@correo.com',
+        ubicacion: 'Ciudad, País'
+    });
+});
+
 
 
 
