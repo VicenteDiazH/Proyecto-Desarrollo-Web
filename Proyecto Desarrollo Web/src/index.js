@@ -49,7 +49,7 @@ app.use("/",express.static(__dirname + "/public"));
 
 //se pueden hacer rutas
 app.get('/profile', (req, res) => {
-    res.render('wallet', {
+    res.render('profile', {
         nombreUsuario: 'Nombre del Usuario',
         email: 'usuario@correo.com',
         ubicacion: 'Ciudad, País'
