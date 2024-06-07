@@ -12,6 +12,8 @@ import { fileURLToPath } from 'url';
 import passport from 'passport';
 import './config/passport.js';
 
+
+
 const app =express();
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
@@ -55,6 +57,22 @@ app.get('/profile', (req, res) => {
         ubicacion: 'Ciudad, País'
     });
 });
+
+app.get('/wallet', (req, res) => {
+    res.render('wallet', {
+        nombreUsuario: 'Nombre del Usuario',
+        email: 'usuario@correo.com',
+        ubicacion: 'Ciudad, País'
+    });
+});
+app.get('/carrito', (req, res) => {
+    res.render('carrito', {
+        nombreUsuario: 'Nombre del Usuario',
+        email: 'usuario@correo.com',
+        ubicacion: 'Ciudad, País'
+    });
+});
+
 
 
 

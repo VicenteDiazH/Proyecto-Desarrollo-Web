@@ -322,12 +322,10 @@ padding-top: 15px;
     color: white;
 }
 .profile-info h2 {
-    font-family: "ola";
     font-size: 2em;
     margin-bottom: 10px;
 }
 .profile-info p {
-    font-family: "ola2";
     font-size: 1.2em;
 }
 .profile-actions {
@@ -348,4 +346,43 @@ padding-top: 15px;
 }
 .profile-actions button:hover {
     background-color: #555;
+}
+
+.walletBody {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.wallet {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+input[type="number"] {
+  margin: 10px 0;
+  padding: 10px;
+  width: calc(100% - 22px);
+  box-sizing: border-box;
+}
+
+.walletButton {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
