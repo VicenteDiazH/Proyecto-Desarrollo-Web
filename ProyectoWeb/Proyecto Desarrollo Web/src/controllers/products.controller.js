@@ -3,12 +3,16 @@ export const renderProductForm=(req,res)=>{
     res.render('addProduct')
 };
 
-export const createNewProduct=(req,res)=>{
-    res.send('new product')
+export const createNewProduct=async (req,res)=>{
+    const {productName,price,description,stock,bandName, image}=req.body;
+    const newProducto=new producto({productName,price,description,stock,bandName, image})
+    await newProducto.save();
+    res.render('home')
 }
 
-export const renderProducts=(req,res)=>{
-    res.send('render product')
+export const renderProducts=async (req,res)=>{
+const productos =await producto.find().lean();
+res.render('home',{productos})
 }
 
 export const  renderEditForm=(req,res)=>{
@@ -22,3 +26,9 @@ export const editProduct=(req,res)=>{
 export const deleteProduct=(req,res)=>{
     res.send('delete product')
 }
+
+export const  renderAlbumPage=async (req,res)=>{
+    const product=await  producto.findById(req.params.id).lean()
+    res.render("albumPages",{product})
+   }
+   

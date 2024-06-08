@@ -1,20 +1,56 @@
- <nav id="navb" class="navbar bg-body-tertiary-dark navbar-dark justify-content-center">
-    <div class="container-fluid">
-      <a id="tienda" href="/" class="navbar-brand">
-        <h1 >
-          <div id="name">
-            Tornotes
-          </div>
-        </h1>
-        <img id="logoTienda" src="./Design/logotienda.png" >
+{{#if user}}
+<nav id="navb" class="navbar bg-body-tertiary-dark navbar-dark justify-content-center">
+  <div class="container-fluid">
+    <a id="tienda" href="/" class="navbar-brand">
+      <h1>
+        <div id="name">
+          Tornotes
+        </div>
+      </h1>
+      <img id="logoTienda" src="/Design/logotienda.png">
+    </a>
+    <div class="micuenta">
+      <a id="clean-text" href="/addProduct" class="navlink">
+        <img id="logoVinilo" src="/Design/viniloLogo.png" />
+        <p id="gestionProductos">
+          Gestion de productos
+        </p>
       </a>
-      <div class="micuenta">
-        <a id="clean-text" href="/login" class="navlink">
-            <img id="mic" src="./Design/usuariopng.png"/>
-            <p id="micuentaa">
-                Mi cuenta
-            </p>
-        </a>
-      </div>
+      <a id="clean-text" href="/cart" class="navlink">
+        <img id="carro" src="/Design/carrito.png" />
+        <p id="carrito">
+          Carrito
+        </p>
+      </a>
+      <a id="clean-text" href="/miCuenta" class="navlink">
+        <img id="mic" src="/Design/usuariopng.png" />
+        <p id="micuentaa">
+          Mi cuenta
+        </p>
+      </a>
     </div>
-  </nav>
+  </div>
+</nav>
+{{else}}
+<nav id="navb" class="navbar bg-body-tertiary-dark navbar-dark justify-content-center">
+  <div class="container-fluid">
+    <a id="tienda" href="/" class="navbar-brand">
+      <h1>
+        <div id="name">
+          Tornotes
+        </div>
+      </h1>
+      <img id="logoTienda" src="/Design/logotienda.png">
+    </a>
+    <div class="micuenta">
+      <a id="clean-text" href="/register" class="navlink">
+        <img id="loginregister" src="/Design/usuariopng.png" />
+        <p id="login_register">
+          Login/Register
+        </p>
+      </a>
+    </div>
+  </div>
+</nav>
+
+{{/if}}

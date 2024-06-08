@@ -2,9 +2,9 @@ import express, { urlencoded } from 'express';
 import router from './routes/index.routes.js';
 import userRouter from './routes/user.routes.js';
 import productRouter from './routes/products.routes.js';
+import cartRouter from "./routes/cart.routes.js"
 import mongoose from 'mongoose';
 import {engine} from "express-handlebars";
-import producto from './models/productos.model.js';
 import path from 'path';
 import flash from "connect-flash";
 import session from 'express-session';
@@ -15,8 +15,8 @@ import './config/passport.js';
 const app =express();
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
-mongoose.connect('mongodb://localhost/proyectoWeb',
-).then(db=>console.log('Database is connected to','mongodb://localhost/proyectoWeb'));
+mongoose.connect('mongodb://localhost/proyectoWebb',
+).then(db=>console.log('Database is connected to','mongodb://localhost/proyectoWebb'));
 console.log(__dirname);
 app.use(express.urlencoded({extended: false}));
 app.use(session({
@@ -36,8 +36,7 @@ app.use((req,res,next)=>{
    next();    
 });
 app.use(router);
-app.use(productRouter);
-app.use(userRouter);
+app.use(productRouter, userRouter, cartRouter);
 
 app.engine("handlebars",engine());
 app.set('view engine','handlebars');
@@ -50,7 +49,7 @@ app.use("/",express.static(__dirname + "/public"));
 
 
 
-console.log(producto);
+
 
 
 app.use(express.json());
