@@ -6,6 +6,14 @@ export const renderRegister = (req, res) => {
   res.render("register");
 };
 
+export const renderMiCuenta = (req, res) => {
+  const user = req.user;
+  console.log(user);
+  res.render("miCuenta",{wallet: user.wallet});
+};
+
+
+
 
 export const register = async (req, res) => {
   const { username, email, password, confirm_password } = req.body;
