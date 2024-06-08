@@ -2,6 +2,7 @@ import express, { urlencoded } from 'express';
 import router from './routes/index.routes.js';
 import userRouter from './routes/user.routes.js';
 import productRouter from './routes/products.routes.js';
+
 import mongoose from 'mongoose';
 import {engine} from "express-handlebars";
 import producto from './models/productos.model.js';
@@ -30,6 +31,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use((req,res,next)=>{
    res.locals.succes_msg=req.flash('succes_msg');
@@ -38,8 +41,9 @@ app.use((req,res,next)=>{
    next();    
 });
 app.use(router);
-app.use(productRouter);
 app.use(userRouter);
+app.use(productRouter);
+
 
 app.engine("handlebars",engine());
 app.set('view engine','handlebars');
@@ -80,8 +84,7 @@ app.get('/carrito', (req, res) => {
 console.log(producto);
 
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
 
 app.listen(3000,()=>{
     console.log('server on port 3000');

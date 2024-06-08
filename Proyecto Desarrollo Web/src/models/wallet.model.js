@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const walletSchema = new mongoose.Schema({
     balance: {
@@ -10,12 +10,14 @@ const walletSchema = new mongoose.Schema({
 
 const Wallet = mongoose.model('Wallet', walletSchema);
 
-exports.getBalance = async () => {
+export default Wallet;
+
+export const getBalance = async () => {
     const wallet = await Wallet.findOne();
     return wallet ? wallet.balance : 0;
 };
 
-exports.addFunds = async (amount) => {
+export const addFunds = async (amount) => {
     let wallet = await Wallet.findOne();
     if (!wallet) {
         wallet = new Wallet();
@@ -24,7 +26,7 @@ exports.addFunds = async (amount) => {
     await wallet.save();
 };
 
-exports.withdrawFunds = async (amount) => {
+export const withdrawFunds = async (amount) => {
     let wallet = await Wallet.findOne();
     if (!wallet || wallet.balance < amount) {
         return false;

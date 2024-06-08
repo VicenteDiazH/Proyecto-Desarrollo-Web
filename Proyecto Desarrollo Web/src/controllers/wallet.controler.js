@@ -1,6 +1,6 @@
-const Wallet = require('../models/wallet.model');
+import Wallet from '../models/wallet.model.js';
 
-exports.getBalance = async (req, res) => {
+export const getBalance = async (req, res) => {
     try {
         const balance = await Wallet.getBalance();
         res.json({ balance });
@@ -9,7 +9,7 @@ exports.getBalance = async (req, res) => {
     }
 };
 
-exports.addFunds = async (req, res) => {
+export const addFunds = async (req, res) => {
     try {
         const { amount } = req.body;
         await Wallet.addFunds(amount);
@@ -20,7 +20,7 @@ exports.addFunds = async (req, res) => {
     }
 };
 
-exports.withdrawFunds = async (req, res) => {
+export const withdrawFunds = async (req, res) => {
     try {
         const { amount } = req.body;
         const success = await Wallet.withdrawFunds(amount);

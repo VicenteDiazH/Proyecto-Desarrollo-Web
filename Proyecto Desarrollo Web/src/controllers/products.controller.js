@@ -1,4 +1,5 @@
 import producto from "../models/productos.model.js";
+
 export const renderProductForm=(req,res)=>{
     res.render('addProduct')
 };

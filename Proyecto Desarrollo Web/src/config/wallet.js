@@ -1,4 +1,3 @@
-// wallet.js
 async function getBalance() {
     const response = await fetch('/wallet/balance');
     const data = await response.json();

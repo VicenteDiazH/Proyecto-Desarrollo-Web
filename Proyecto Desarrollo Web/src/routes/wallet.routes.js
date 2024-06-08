@@ -1,15 +1,10 @@
-const express = require('express');
-const app = express();
-const walletController = require('./controllers/wallet.controller');
+import {Router} from 'express';
+import {getBalance, addFunds, withdrawFunds} from '../controllers/wallet.controller.js';
 
-app.use(express.json());
-app.use(express.static('public'));
+const router = Router();
 
-app.get('/wallet/balance', walletController.getBalance);
-app.post('/wallet/add', walletController.addFunds);
-app.post('/wallet/withdraw', walletController.withdrawFunds);
+router.get('/wallet/balance', getBalance);
+router.post('/wallet/add', addFunds);
+router.post('/wallet/withdraw', withdrawFunds);
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+export default router;
