@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
+
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  wallet: { type: Number, default: 1000000 ,required: true },
 });
 
 userSchema.methods.encryptPassword = async function (password) {

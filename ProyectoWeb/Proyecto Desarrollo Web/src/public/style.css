@@ -32,6 +32,7 @@
     align-items: center;
     height: 100%;
   }
+
   
   #img1{
     height: 600px;
@@ -70,9 +71,9 @@
   padding-top: 100px;
   }
   
-  form{
+  #form1{
 padding-left: 150px;  
-padding-top: 100px;
+padding-top: 25px;
 }
 #box-login{
   height: 300px;
@@ -99,9 +100,16 @@ padding-top: 100px;
   
   #main{
     justify-content: center;
+ height: max-content;
+  }
+  #mainP{
+    justify-content: center;
   
   }
-  
+  #ola2{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
   #sech{
     width: 1000px;
   }
@@ -114,7 +122,7 @@ padding-top: 100px;
   
   .micuenta{
     padding-left: 10px;
-    display:grid;
+    display:flex;
   }
   #loginregister{
  
@@ -137,8 +145,8 @@ padding-top: 100px;
   }
   
   #imagen-producto{
-    padding-top: 80px;
-    height: 450px;
+    padding-top: 10px;
+    height: 370px;
   }
   @keyframes parpadeo {
     0% { opacity: 1; }
@@ -164,11 +172,23 @@ padding-top: 100px;
    padding-bottom: 10px;
    font-family: "ola2";
   }
+  #nameForm{
+    justify-content: center;
+   padding-right: 10px;
+   padding-bottom: 15px;
+   font-family: "ola2";
+   color: #fff;
+  }
   
+  #box-addform{
+  padding-bottom: 50px;
+  }
   #logoTienda{
     height: 65px;
   }
-  
+  #productos{
+    color: #fff;
+  }
   h1{
     justify-content: center;
     padding-top: 10px;
@@ -281,8 +301,128 @@ padding-top: 15px;
   }
   
   .product-description {
+    padding-top: 20px;
     font-size: 16px;
     color: #ffffff;
-    text-align: justify;
+    white-space: pre-wrap;
+    word-wrap: break-word; /* Permite que el texto se divida para ajustarse al contenedor */
+    white-space: normal;
   }
   
+#carro{
+ padding-right: 10px;
+  display: grid;
+  height: 50px;
+}
+#carrito{
+  font-family: sans-serif;
+padding-left: 7px;
+  font-size: small;
+  font-weight:lighter;
+   text-decoration: none;
+   font-stretch: ultra-condensed;
+   font-size: small;
+}
+#tucarrito{
+  justify-content: center;
+padding-left: 200px;
+padding-top: 30px;
+  color: #ffffff;
+}
+
+#box-cart{
+  padding:0;
+  justify-content: center;
+  height:auto;
+  padding-bottom: 550px;
+  display: grid;
+  width: 100%;
+  max-width: 1000px; 
+  background-color: (15,15,15);
+  box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.1);
+  border-radius: 5px;
+}
+#cantidad-carrito{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+i{
+  color: #fff;
+}
+#card-cart{
+  height: 500px;
+}
+#ola3{
+  height: 380px;
+  
+}
+#cantidad-carro{
+  display: flex;
+  align-items: center;
+  
+  
+}
+#botones{
+padding: 10px;
+padding-bottom: 24px;
+
+}
+#logoVinilo{
+ padding-left: 40px;
+  display: grid;
+  height: 50px;
+}
+
+#gestionProductos{
+padding-right: 10px;
+    font-family: sans-serif;
+    font-size: small;
+    font-weight:lighter;
+     text-decoration: none;
+     font-stretch: ultra-condensed;
+     font-size: small;
+  
+}
+
+#totalPagar{
+  justify-content:left;
+ padding-right: 10px;
+
+ font-family: "ola2";
+ color: #fff;
+}
+#pago{
+  padding-top: 30px;
+  display: flex;
+  align-items: baseline;
+}
+#form2{
+  padding-left: 110px;  
+  padding-top: 25px;
+  }
+  #tuCarrito{
+   padding-top: 50px;
+      justify-content:center;
+     padding-right: 10px;
+    
+     font-family: "ola2";
+     color: #fff;
+    
+  }
+#atributosCuenta{
+padding-left: 20px;
+padding-top: 50px;
+
+}
+#box-cuenta{
+  height: 300px;
+  padding-bottom: 550px;
+  display: grid;
+}
+#wallet{
+  color: #fff;
+  display: flex;
+ 
+}
