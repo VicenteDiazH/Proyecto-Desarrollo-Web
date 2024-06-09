@@ -8,7 +8,6 @@ export const renderRegister = (req, res) => {
 
 export const renderMiCuenta = (req, res) => {
   const user = req.user;
-  console.log(user);
   res.render("miCuenta",{wallet: user.wallet});
 };
 
@@ -53,6 +52,23 @@ export const login = passport.authenticate("local", {
  
 });
 export const logout = (req, res) => {
-req.logout();
- res.redirect('/login');
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect('/login');
+  });
+};
+
+
+export const renderWallet = (req, res) => {
+  res.render("wallet");
+};
+export const addWallet = async (req, res) => {
+  const { wallet } = req.body;
+  const walletNumeber=wallet;
+  const user = req.user;
+user.wallet=walletNumeber*1+user.wallet;
+user.save();
+res.redirect("/miCuenta");
 };

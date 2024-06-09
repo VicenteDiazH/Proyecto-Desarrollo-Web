@@ -4,9 +4,21 @@ import cartRelationModel from "../models/cartPerProduct.model.js";
 
 export const comprar = async (req, res) => {
   const user = req.user;
-  const cart = await cartModel.findOne({ user: user })
-  console.log(cart);
-  
+  const cart = await cartModel.findOne({ user: user });
+  const cartId=cart.id;
+ 
+ if(cart.amount>user.wallet){
+  res.send("Saldo insuficiente")
+  return;
+}else{
+  user.wallet=user.wallet-cart.amount;
+  cart.amount=0;
+  await user.save();
+ await  cart.save();
+ await cartModel.findByIdAndDelete(cartId);
+
+}
+res.redirect("/cart")
 };
 
 export const renderCart = async (req, res) => {

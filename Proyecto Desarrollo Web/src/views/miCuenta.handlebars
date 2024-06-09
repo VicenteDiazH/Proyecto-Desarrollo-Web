@@ -17,19 +17,37 @@
 
           <div class="mb-3">
             <div id="wallet">
-             <h2>
+              <div id="wallets">
+
+              <h1 id="walletIcon" class="bi bi-wallet2"></h1>
+             <h3>
                 Wallet:
-             </h2>
-               <h2>
-                {{wallet}}
-             </h2>
+             </h3>
+               <h3 id="dineroWallet">
+                ${{wallet}}
+             </h3>
+              </div>
+             <div id="añadirDinero">
+              <a href="/wallet">
+                  <button  type="submit" class="btn btn-outline-light">Añadir dinero </button>
+              </a>
             
+             </div>
+             <div id="recibo" >
+  <h1 class="bi bi-receipt"></h1>
+              <h3>
+                Recibos:
+             </h3>
+             </div>
+           
             </div>
            
        
           </div>
-        
-          <button type="submit" class="btn btn-outline-light">Logout</button>
+        <form id="logout" method="GET" action="logout">
+           <button type="submit" class="btn btn-outline-danger">Logout</button>
+        </form>
+         
         </div>
        
       </div>

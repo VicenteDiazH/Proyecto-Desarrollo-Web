@@ -422,7 +422,34 @@ padding-top: 50px;
   display: grid;
 }
 #wallet{
+  align-items: center   ;
   color: #fff;
-  display: flex;
+  display: grid;
  
+}
+#añadirDinero{
+  padding-left:40px ;
+}
+#logout{
+  padding-top: 100px;
+padding-left: 185px;
+}
+#dineroWallet{
+  padding-left:10px ;
+}
+#walletIcon{
+ padding-bottom: 15px;
+padding-right: 10px;
+}
+#wallets{
+  align-items: center;
+  display: flex;
+}
+#pagar{
+ padding-left: 52px;
+}
+#recibo{
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
 }
