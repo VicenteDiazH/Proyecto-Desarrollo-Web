@@ -1,0 +1,54 @@
+<div id="rows" class="row">
+  <div class="col">
+    <div id="divrayo1"></div>
+  </div>
+  <div id="main" class="col-sm-4">
+    <!-- Información entre efectos de la pagina -->
+    <div class="container">
+      <div id="box-addform" class="box">
+
+
+
+        <form id="form1" action="addProduct" method="POST">
+          <div id="addproductform">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nombre del producto</label>
+              <input type="text" class="form-control" name="productName">
+
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Precio del producto</label>
+              <input type="number" class="form-control" name="price">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Descripcion del producto</label>
+              <input type="text" class="form-control" name="description">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Stock</label>
+              <input type="number" class="form-control" name="stock">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nombre de la banda</label>
+              <input type="text" class="form-control" name="bandName">
+
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">URL de imagen del producto</label>
+              <input type="text" class="form-control" name="image">
+
+            </div>
+            <button type="submit" class="btn btn-outline-light">Crear nuevo producto</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <!-- Fin de los efectos -->
+    <div id="divv"></div>
+  </div>
+  <div class="col">
+    <div id="divrayo2"></div>
+  </div>
+</div>
+{{>footer}}

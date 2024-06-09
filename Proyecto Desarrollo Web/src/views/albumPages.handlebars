@@ -1,0 +1,30 @@
+<div id="rows" class="row">
+    <div class="col">
+        <div id="divrayo1"></div>
+    </div>
+    <div id="main" class="col-sm-6">
+        <div class="container">
+            <div class="box">
+                <img src={{product.image}} id="imagen-producto" alt="Imagen del producto"
+                    class="product-image">
+                <div class="product-details">
+                    <h1 class="product-title">{{product.productName}}</h1>
+                    <h2 class="product-subtitle">{{product.bandName}}</h2>
+                    <p class="product-price">${{product.price}}</p>
+                    <div id="comprar">
+                        <form id="form1" action="/albumPages/{{product._id}}" method="POST">
+                            <button type="submit" class="btn btn-outline-light">Añadir al carrito</button>
+                        </form>
+                       
+                    </div>
+                    <p class="product-description">{{product.description}}</p>
+                </div>
+            </div>
+        </div>
+        <div id="divv"></div>
+    </div>
+    <div class="col">
+        <div id="divrayo2"></div>
+    </div>
+</div>
+{{>footer}}
