@@ -12,7 +12,7 @@ export const createNewProduct=async (req,res)=>{
 
 export const renderProducts=async (req,res)=>{
 const productos =await producto.find().lean();
-res.render('home',{productos})
+res.render('home',{productos,layout:"main"})
 }
 
 export const  renderEditForm=(req,res)=>{

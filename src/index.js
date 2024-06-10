@@ -1,8 +1,8 @@
 import express, { urlencoded } from 'express';
-import router from './routes/index.routes.js';
 import userRouter from './routes/user.routes.js';
 import productRouter from './routes/products.routes.js';
-import cartRouter from "./routes/cart.routes.js"
+import cartRouter from "./routes/cart.routes.js";
+import receiptRouter from "./routes/receipts.routes.js";
 import mongoose from 'mongoose';
 import {engine} from "express-handlebars";
 import path from 'path';
@@ -35,14 +35,17 @@ app.use((req,res,next)=>{
    res.locals.user=req.user||null;
    next();    
 });
-app.use(router);
-app.use(productRouter, userRouter, cartRouter);
+
+
 
 app.engine("handlebars",engine());
 app.set('view engine','handlebars');
 app.set('views', path.resolve(__dirname +'/views'));
 
-
+app.use(productRouter);
+app.use(userRouter);
+app.use(cartRouter);
+app.use(receiptRouter);
 
 app.use("/",express.static(__dirname + "/public"));
 

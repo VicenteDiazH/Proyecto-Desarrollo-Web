@@ -430,10 +430,11 @@ padding-top: 50px;
 #añadirDinero{
   padding-left:40px ;
 }
+
 #logout{
-  padding-top: 100px;
-padding-left: 185px;
+  padding-left: 185px;
 }
+
 #dineroWallet{
   padding-left:10px ;
 }
@@ -452,4 +453,51 @@ padding-right: 10px;
   padding-top: 30px;
   display: flex;
   align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.profile-info {
+    color: white;
+}
+.profile-info h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.profile-info p {
+    font-size: 1.2em;
+}
+.profile-actions {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px;
+}
+.profile-actions button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.profile-actions button:hover {
+    background-color: #555;
 }
