@@ -9,11 +9,22 @@ export const getAllReceipts = async (req, res) => {
     res.send(receipts);
 };
 
-export const getReceiptsByUserId = async (req, res) => {
+export const getReceiptsByUserId = async (req, res, next) => {
     const userId = req.params.userId;
     if (!mongoose.Types.ObjectId.isValid(userId)) {
-        return res.status(400).send("Invalid user ID");
+      return res.status(400).send("Invalid user ID");
     }
-    next();
-};
+  
+    try {
+      const receipt = await receiptModel.findById(userId).populate("relations.product").lean();
+      if (!receipt) {
+        return res.status(404).send("Recibo no encontrado");
+      }
+      res.render("receipt", { receipt }); // Renderiza una vista llamada 'receipt' y pasa el recibo
+    } catch (error) {
+      console.error("Error al obtener el recibo:", error);
+      res.status(500).send("Error al obtener el recibo");
+    }
+  };
+  
 export default routes;

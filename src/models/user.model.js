@@ -7,6 +7,12 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   wallet: { type: Number, default: 0 ,required: true },
+  recibos: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "receipt",
+    },
+  ],
 });
 
 userSchema.methods.encryptPassword = async function (password) {

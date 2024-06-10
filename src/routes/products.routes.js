@@ -14,6 +14,6 @@ router.put('/edit/:id',editProduct);
 
 router.get('/albumPages/:id',renderAlbumPage);
 
-router.delete('delete/:id',deleteProduct);
+router.get('/delete/:id',deleteProduct);
 
 export default router;

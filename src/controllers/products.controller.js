@@ -12,7 +12,7 @@ export const createNewProduct=async (req,res)=>{
 
 export const renderProducts=async (req,res)=>{
 const productos =await producto.find().lean();
-res.render('home',{productos,layout:"main"})
+res.render('home',{productos})
 }
 
 export const  renderEditForm=(req,res)=>{
@@ -23,12 +23,15 @@ export const editProduct=(req,res)=>{
      res.send('edit product')
 }
 
-export const deleteProduct=(req,res)=>{
-    res.send('delete product')
-}
+
 
 export const  renderAlbumPage=async (req,res)=>{
     const product=await  producto.findById(req.params.id).lean()
     res.render("albumPages",{product})
    }
+
+   export const  deleteProduct=async (req,res)=>{
+    const product=await producto.findByIdAndDelete(req.params.id).lean()
+   res.render("home");
+   } 
    

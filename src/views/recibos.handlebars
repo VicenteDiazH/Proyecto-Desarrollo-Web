@@ -1,0 +1,14 @@
+<h1>Detalles del Recibo</h1>
+  <p>ID del Recibo: {{receipt._id}}</p>
+  <p>Total: ${{receipt.total}}</p>
+  <h2>Productos:</h2>
+  <ul>
+    {{#each receipt.relations}}
+      <li>
+        <strong>Producto:</strong> {{this.productName}}<br>
+        <strong>Cantidad:</strong> {{this.quantity}}<br>
+        <strong>Precio:</strong> ${{this.price}}
+      </li>
+    {{/each}}
+  </ul>
+{{>footer}}

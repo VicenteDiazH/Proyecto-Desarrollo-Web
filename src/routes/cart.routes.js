@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { renderCart,addCart,removeCart,comprar} from "../controllers/cart.controller.js";
+import { renderCart,addCart,removeCart,comprar, crearReceipt, renderReceipts} from "../controllers/cart.controller.js";
+
 
 const router = Router();
 
@@ -13,6 +14,8 @@ router.post("/addCart/:id", addCart);
 
 router.post("/removeCart/:id", removeCart);
 
+router.post("/cart", crearReceipt);
 
+router.get("/receipts", renderReceipts);
 
 export default router;

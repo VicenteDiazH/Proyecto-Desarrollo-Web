@@ -11,12 +11,20 @@
                     <h1 class="product-title">{{product.productName}}</h1>
                     <h2 class="product-subtitle">{{product.bandName}}</h2>
                     <p class="product-price">${{product.price}}</p>
+                    {{#if user}}
                     <div id="comprar">
                         <form id="form1" action="/albumPages/{{product._id}}" method="POST">
                             <button type="submit" class="btn btn-outline-light">Añadir al carrito</button>
                         </form>
                        
                     </div>
+                        <div id="comprar">
+                        <form id="form1" action="/delete/{{product._id}}" method="GET">
+                            <button type="submit" class="btn btn-outline-danger">Eliminar producto de la base de datos</button>
+                        </form>
+                       
+                    </div>
+                    {{/if}}
                     <p class="product-description">{{product.description}}</p>
                 </div>
             </div>
