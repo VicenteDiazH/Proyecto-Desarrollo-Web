@@ -47,7 +47,7 @@ app.use(userRouter);
 app.use(cartRouter);
 app.use(receiptRouter);
 
-app.use("/",express.static(__dirname + "/public"));
+app.use("/static",express.static(__dirname + "/public"));
 
 
 

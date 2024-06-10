@@ -3,7 +3,7 @@ import { getAllReceipts, getReceiptsByUserId} from "../controllers/receipts.cont
 
 const router =Router();
 
-router.get("/", getAllReceipts);
-router.get("/:userId", getReceiptsByUserId);
+router.get("/receipts", getAllReceipts);
+router.get("/receipts/:userId", getReceiptsByUserId);
 
 export default router;
