@@ -11,6 +11,8 @@ import session from 'express-session';
 import { fileURLToPath } from 'url';
 import passport from 'passport';
 import './config/passport.js';
+import cookieParser from "cookie-parser";
+
 
 const app =express();
 const __filename=fileURLToPath(import.meta.url);
@@ -42,10 +44,13 @@ app.engine("handlebars",engine());
 app.set('view engine','handlebars');
 app.set('views', path.resolve(__dirname +'/views'));
 
+app.use(cookieParser());
+
 app.use(productRouter);
 app.use(userRouter);
 app.use(cartRouter);
 app.use(receiptRouter);
+
 
 app.use("/static",express.static(__dirname + "/public"));
 
