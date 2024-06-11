@@ -15,8 +15,8 @@ import './config/passport.js';
 const app =express();
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
-mongoose.connect('mongodb://localhost/proyectoWebb',
-).then(db=>console.log('Database is connected to','mongodb://localhost/proyectoWebb'));
+mongoose.connect('mongodb+srv://VicenteDiazH:Ur8GMVqW31uGcEbX@cluster0.snhc1rx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+);
 console.log(__dirname);
 app.use(express.urlencoded({extended: false}));
 app.use(session({
