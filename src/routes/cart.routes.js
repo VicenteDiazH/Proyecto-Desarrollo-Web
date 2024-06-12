@@ -1,21 +1,28 @@
 import { Router } from "express";
-import { renderCart,addCart,removeCart,comprar, crearReceipt, renderReceipts} from "../controllers/cart.controller.js";
-
+import {
+  renderCart,
+  addCart,
+  removeCart,
+  comprar,
+  createReceipt,
+  renderRecibos,
+} from "../controllers/cart.controller.js";
+import { isAuthenticated } from "../middlewares/auth.js";
 
 const router = Router();
 
 router.post("/cart", comprar);
 
-router.get("/cart", renderCart);
+router.get("/cart", isAuthenticated, renderCart);
 
 router.post("/albumPages/:id", addCart);
 
-router.post("/addCart/:id", addCart);
+router.post("/addCart/:id", isAuthenticated, addCart);
 
-router.post("/removeCart/:id", removeCart);
+router.post("/removeCart/:id", isAuthenticated, removeCart);
 
-router.post("/cart", crearReceipt);
+router.post("/cart", createReceipt);
 
-router.get("/receipts", renderReceipts);
+router.get("/recibos", isAuthenticated, renderRecibos);
 
 export default router;

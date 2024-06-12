@@ -1,374 +1,368 @@
 @font-face {
-    font-family: "ola";
-    src: url(./fonts/In\ die\ busillis.ttf);
-  }
-  @font-face {
-    font-family: "ola2";
-    src: url(./fonts/Masberco.otf);
-  }
-  #row1{
-    justify-content: center;
-    margin-top: 60px;
-  
-  }
-  body{
-    background-color: rgb(15, 15, 15);
-    text-decoration: none;
-  }
-  #navb{
-   
-    background-color: rgb(15, 15, 15);
-    border-bottom: 1px solid #fff;
-    border-color: rgb(51, 51, 51);
-    height: 90px;
-  }
-  a{
-    color: white;
-  }
-  
-  #ola1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
+  font-family: "ola";
+  src: url(./fonts/In\ die\ busillis.ttf);
+}
+@font-face {
+  font-family: "ola2";
+  src: url(./fonts/Masberco.otf);
+}
+#row1{
+  justify-content: center;
+  margin-top: 60px;
 
-  
-  #img1{
-    height: 600px;
-    width: 1000px;
-  }
-  
-  .card-size{
-    width: 300px;
-    height: 400px;
-  }
-  
-  .card-title-color{
+}
+body{
+  background-color: rgb(15, 15, 15);
+  text-decoration: none;
+}
+#navb{
+ 
+  background-color: rgb(15, 15, 15);
+  border-bottom: 1px solid #fff;
+  border-color: rgb(51, 51, 51);
+  height: 90px;
+}
+a{
   color: white;
-  }
-  
-  .card-text-color{
-    color: white;
-    text-decoration: none;
-  }
-  
-  .card-artist-color{
-    color: white;
-  }
-  
-  .image-box {
-    width: 100%; 
-    height: 300px; 
-    overflow: hidden;
-  }
-  .image-box img {
-    width: 100%; 
-    height: auto; 
-  }
-  
-  #divv{
-  padding-top: 100px;
-  }
-  
-  #form1{
+}
+
+#ola1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+#img1{
+  height: 600px;
+  width: 1000px;
+}
+
+.card-size{
+  width: 300px;
+  height: 400px;
+}
+
+.card-title-color{
+color: white;
+}
+
+.card-text-color{
+  color: white;
+  text-decoration: none;
+}
+
+.card-artist-color{
+  color: white;
+}
+
+.image-box {
+  width: 100%; 
+  height: 300px; 
+  overflow: hidden;
+}
+.image-box img {
+  width: 100%; 
+  height: auto; 
+}
+
+#divv{
+padding-top: 100px;
+}
+
+#form1{
 padding-left: 150px;  
 padding-top: 25px;
 }
 #box-login{
-  height: 300px;
-  padding-bottom: 550px;
+height: 300px;
+padding-bottom: 550px;
 }
-  
-  #divrayo1{
-    animation: parpadeo 4s infinite;
-    background-size: auto 100%;
-   background-position: center;
-    background-repeat: no-repeat;
-    background-image:url("./Design/Pngtreeblue_line_lightning_4762617\ 2.png");
-    height:100%;
-  }
-  
-  #divrayo2{
-    animation: parpadeo 3s infinite;
-    background-size: auto 100%;
-   background-position: center;
-    background-repeat: no-repeat;
-    background-image:url("./Design/Pngtreeblue_line_lightning_4762617.png");
-    height:100%;
-  }
-  
-  #main{
-    justify-content: center;
- height: max-content;
-  }
-  #mainP{
-    justify-content: center;
-  
-  }
-  #ola2{
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  #sech{
-    width: 1000px;
-  }
-  
-  #mic{
-    padding-left: 5px;
-    display: grid;
-    height: 50px;
-  }
-  
-  .micuenta{
-    padding-left: 10px;
-    display:flex;
-  }
-  #loginregister{
- 
-    display: grid;
-    height: 50px;
-    padding-left: 15px;
-  }
-  #micuentaa{
-    font-family: sans-serif;
-    padding-right: 20px;
-    font-size: small;
-    font-weight:lighter;
-     text-decoration: none;
-     font-stretch: ultra-condensed;
-     font-size: small;
-  }
-  
-  #clean-text{
-    text-decoration: none;
-  }
-  
-  #imagen-producto{
-    padding-top: 10px;
-    height: 370px;
-  }
-  @keyframes parpadeo {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  form{
-    color: #fff;
-  }
-  #tienda{
-    font-family:"ola2", Arial, Helvetica, sans-serif;
-    justify-content: center;
-    padding-right: 1000px;
-    font-size:xx-large;
-    padding-bottom: 10px;
-    display: flex;
-    
-  }
-  
-  #name{
-    justify-content: center;
-   padding-right: 10px;
-   padding-bottom: 10px;
-   font-family: "ola2";
-  }
-  #nameForm{
-    justify-content: center;
-   padding-right: 10px;
-   padding-bottom: 15px;
-   font-family: "ola2";
-   color: #fff;
-  }
-  
-  #box-addform{
-  padding-bottom: 50px;
-  }
-  #logoTienda{
-    height: 65px;
-  }
-  #productos{
-    color: #fff;
-  }
-  h1{
-    justify-content: center;
-    padding-top: 10px;
-    padding-left: 10px;
-    display: flex;
-  }
-  
-  .carousel-title {
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  
-  #product {
-    clear: both;
-    font-size: 15px;
-  }
-#yatienescuenta{
-  display: flex;
-padding-top: 15px;
+
+#divrayo1{
+  animation: parpadeo 4s infinite;
+  background-size: auto 100%;
+ background-position: center;
+  background-repeat: no-repeat;
+  background-image:url("./Design/Pngtreeblue_line_lightning_4762617\ 2.png");
+  height:100%;
 }
-  * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-family: open sans,sans-serif;
-    font-display: swap;
-  }
-  .titulo_marca {
-    width: 770px;
-    float: right;
-    padding-bottom: 10px;
-    display: table;
-  }
-  
-  /* CSS de página por album*/
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: rgb(15, 15, 15);
-  }
-  
-  .box {
-    
-    display: flex;
-    width: 100%;
-    max-width: 1000px; 
-    background-color: (15,15,15);
-    box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.1);
-    border-radius: 5px;
-  }
-  
-  #comprar{
-    height: 55px;
-  }
-  #boton-comprar {
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
- 
-  }
-  .product-image {
-    width: 40%; 
-    height: auto;
-    object-fit: cover;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-  
-  .product-details {
-    flex-grow: 1;
-    padding: 20px;
-    color: #ffffff;
-    text-align: justify; 
-  }
-  
-  .product-title {
-    font-size: 24px;
-    color: #ffffff;
-    margin-bottom: 10px;
-    text-align: left; 
-  }
-  
-  .product-subtitle {
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-  #login_register{
-    font-family: sans-serif;
-  padding-right: 10px;
-    font-size: small;
-    font-weight:lighter;
-     text-decoration: none;
-     font-stretch: ultra-condensed;
-     font-size: small;
-  }
 
-  .product-price {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
+#divrayo2{
+  animation: parpadeo 3s infinite;
+  background-size: auto 100%;
+ background-position: center;
+  background-repeat: no-repeat;
+  background-image:url("./Design/Pngtreeblue_line_lightning_4762617.png");
+  height:100%;
+}
 
-  .product-stock {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .product-description {
-    padding-top: 20px;
-    font-size: 16px;
-    color: #ffffff;
-    white-space: pre-wrap;
-    word-wrap: break-word; /* Permite que el texto se divida para ajustarse al contenedor */
-    white-space: normal;
-  }
-  
-#carro{
- padding-right: 10px;
+#main{
+  justify-content: center;
+height: max-content;
+}
+#mainP{
+  justify-content: center;
+
+}
+#ola2{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+#sech{
+  width: 1000px;
+}
+
+#mic{
+  padding-left: 5px;
   display: grid;
   height: 50px;
 }
-#carrito{
+
+.micuenta{
+  padding-left: 10px;
+  display:flex;
+}
+#loginregister{
+
+  display: grid;
+  height: 50px;
+  padding-left: 15px;
+}
+#micuentaa{
   font-family: sans-serif;
-padding-left: 7px;
+  padding-right: 20px;
   font-size: small;
   font-weight:lighter;
    text-decoration: none;
    font-stretch: ultra-condensed;
    font-size: small;
 }
-#tucarrito{
-  justify-content: center;
-padding-left: 200px;
-padding-top: 30px;
-  color: #ffffff;
+
+#clean-text{
+  text-decoration: none;
 }
 
-#box-cart{
-  padding:0;
+#imagen-producto{
+  padding-top: 10px;
+  height: 370px;
+}
+@keyframes parpadeo {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+form{
+  color: #fff;
+}
+#tienda{
+  font-family:"ola2", Arial, Helvetica, sans-serif;
   justify-content: center;
-  height:auto;
-  padding-bottom: 550px;
-  display: grid;
+  padding-right: 1000px;
+  font-size:xx-large;
+  padding-bottom: 10px;
+  display: flex;
+  
+}
+
+#name{
+  justify-content: center;
+ padding-right: 10px;
+ padding-bottom: 10px;
+ font-family: "ola2";
+}
+#nameForm{
+  justify-content: center;
+ padding-right: 10px;
+ padding-bottom: 15px;
+ font-family: "ola2";
+ color: #fff;
+}
+
+#box-addform{
+padding-bottom: 50px;
+}
+#logoTienda{
+  height: 65px;
+}
+#productos{
+  color: #fff;
+}
+h1{
+  justify-content: center;
+  padding-top: 10px;
+  padding-left: 10px;
+  display: flex;
+}
+
+.carousel-title {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#product {
+  clear: both;
+  font-size: 15px;
+}
+#yatienescuenta{
+display: flex;
+padding-top: 15px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: open sans,sans-serif;
+  font-display: swap;
+}
+.titulo_marca {
+  width: 770px;
+  float: right;
+  padding-bottom: 10px;
+  display: table;
+}
+
+/* CSS de página por album*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(15, 15, 15);
+}
+
+.box {
+  
+  display: flex;
   width: 100%;
   max-width: 1000px; 
   background-color: (15,15,15);
   box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.1);
   border-radius: 5px;
 }
+
+#comprar{
+  height: 55px;
+}
+#boton-comprar {
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+
+}
+.product-image {
+  width: 40%; 
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.product-details {
+  flex-grow: 1;
+  padding: 20px;
+  color: #ffffff;
+  text-align: justify; 
+}
+
+.product-title {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-align: left; 
+}
+
+.product-subtitle {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+#login_register{
+  font-family: sans-serif;
+padding-right: 10px;
+  font-size: small;
+  font-weight:lighter;
+   text-decoration: none;
+   font-stretch: ultra-condensed;
+   font-size: small;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  padding-top: 20px;
+  font-size: 16px;
+  color: #ffffff;
+  white-space: pre-wrap;
+  word-wrap: break-word; /* Permite que el texto se divida para ajustarse al contenedor */
+  white-space: normal;
+}
+
+#carro{
+padding-right: 10px;
+display: grid;
+height: 50px;
+}
+#carrito{
+font-family: sans-serif;
+padding-left: 7px;
+font-size: small;
+font-weight:lighter;
+ text-decoration: none;
+ font-stretch: ultra-condensed;
+ font-size: small;
+}
+#tucarrito{
+justify-content: center;
+padding-left: 200px;
+padding-top: 30px;
+color: #ffffff;
+}
+
+#box-cart{
+padding:0;
+justify-content: center;
+height:auto;
+padding-bottom: 550px;
+display: grid;
+width: 100%;
+max-width: 1000px; 
+background-color: (15,15,15);
+box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.1);
+border-radius: 5px;
+}
 #cantidad-carrito{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 i{
-  color: #fff;
+color: #fff;
 }
 #card-cart{
-  height: 500px;
+height: 500px;
 }
 #ola3{
-  height: 380px;
-  
+height: 380px;
+
 }
 #cantidad-carro{
-  display: flex;
-  align-items: center;
-  
-  
+display: flex;
+align-items: center;
+
+
 }
 #botones{
 padding: 10px;
@@ -376,150 +370,102 @@ padding-bottom: 24px;
 
 }
 #logoVinilo{
- padding-left: 40px;
-  display: grid;
-  height: 50px;
+padding-left: 40px;
+display: grid;
+height: 50px;
 }
 
 #gestionProductos{
 padding-right: 10px;
-    font-family: sans-serif;
-    font-size: small;
-    font-weight:lighter;
-     text-decoration: none;
-     font-stretch: ultra-condensed;
-     font-size: small;
-  
+  font-family: sans-serif;
+  font-size: small;
+  font-weight:lighter;
+   text-decoration: none;
+   font-stretch: ultra-condensed;
+   font-size: small;
+
 }
 
 #totalPagar{
-  justify-content:left;
- padding-right: 10px;
+justify-content:left;
+padding-right: 10px;
 
- font-family: "ola2";
- color: #fff;
+font-family: "ola2";
+color: #fff;
 }
 #pago{
-  padding-top: 30px;
-  display: flex;
-  align-items: baseline;
+padding-top: 30px;
+display: flex;
+align-items: baseline;
 }
 #form2{
-  padding-left: 110px;  
-  padding-top: 25px;
-  }
-  #tuCarrito{
-   padding-top: 50px;
-      justify-content:center;
-     padding-right: 10px;
-    
-     font-family: "ola2";
-     color: #fff;
-    
-  }
+padding-left: 110px;  
+padding-top: 25px;
+}
+#tuCarrito{
+ padding-top: 50px;
+    justify-content:center;
+   padding-right: 10px;
+  
+   font-family: "ola2";
+   color: #fff;
+  
+}
 #atributosCuenta{
 padding-left: 20px;
 padding-top: 50px;
 
 }
 #box-cuenta{
-  height: 300px;
-  padding-bottom: 550px;
-  display: grid;
+height: 300px;
+padding-bottom: 550px;
+display: grid;
 }
 #wallet{
-  align-items: center   ;
-  color: #fff;
-  display: grid;
- 
+align-items: center   ;
+color: #fff;
+display: grid;
+
 }
 #añadirDinero{
-  padding-left:40px ;
+padding-left:40px ;
 }
-
 #logout{
-  padding-left: 185px;
+padding-top: 100px;
+padding-left: 185px;
 }
-
 #dineroWallet{
-  padding-left:10px ;
+padding-left:10px ;
 }
 #walletIcon{
- padding-bottom: 15px;
+padding-bottom: 15px;
 padding-right: 10px;
 }
 #wallets{
-  align-items: center;
-  display: flex;
+align-items: center;
+display: flex;
 }
 #pagar{
- padding-left: 52px;
+padding-left: 52px;
 }
 #recibo{
-  padding-top: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-.profile-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-.profile-info {
-    color: white;
-}
-.profile-info h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-.profile-info p {
-    font-size: 1.2em;
-}
-.profile-actions {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 600px;
-}
-.profile-actions button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-.profile-actions button:hover {
-    background-color: #555;
-}
-#recibo{
-  padding-top: 30px;
-  display: flex;
-  align-items: center;
+padding-top: 30px;
+display: flex;
+align-items: center;
 }
 #recibos{
-  display: grid;
+display: grid;
 }
 #cadaRecibo{
-  color: #fff;
-  display: grid;
+color: #fff;
+display: grid;
 }
 #todosRecibos{
-  display: grid;
+display: grid;
+}
 
+.product-stock {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 10px;
 }

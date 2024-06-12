@@ -1,14 +1,35 @@
-<h1>Detalles del Recibo</h1>
-  <p>ID del Recibo: {{receipt._id}}</p>
-  <p>Total: ${{receipt.total}}</p>
-  <h2>Productos:</h2>
-  <ul>
-    {{#each receipt.relations}}
-      <li>
-        <strong>Producto:</strong> {{this.productName}}<br>
-        <strong>Cantidad:</strong> {{this.quantity}}<br>
-        <strong>Precio:</strong> ${{this.price}}
-      </li>
-    {{/each}}
-  </ul>
+<div id="rows" class="row">
+    <div class="col">
+        <div id="divrayo1"></div>
+    </div>
+    <div id="main" class="col-sm-4">
+        <div class="container">
+            <div id="box-cuenta" class="box">
+                <h1>
+                    <div id="nameForm">
+                        Recibos
+                    </div>
+                </h1>
+                <div id="todosRecibos">
+                    <div id="cadaRecibo">
+                        {{#each receiptToRender}}
+                        <h2 id="totalRecibo">
+                            ${{total}}
+                        </h2>
+                        <ul>
+                            {{#each products}}
+                            <li>{{productName}}</li>
+                            {{/each}}
+                        </ul>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divv"></div>
+    </div>
+    <div class="col">
+        <div id="divrayo2"></div>
+    </div>
+</div>
 {{>footer}}

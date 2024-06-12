@@ -23,15 +23,12 @@ export const editProduct=(req,res)=>{
      res.send('edit product')
 }
 
-
-
 export const  renderAlbumPage=async (req,res)=>{
     const product=await  producto.findById(req.params.id).lean()
     res.render("albumPages",{product})
    }
 
-   export const  deleteProduct=async (req,res)=>{
-    const product=await producto.findByIdAndDelete(req.params.id).lean()
-   res.render("home");
-   } 
-   
+export const  deleteProduct=async (req,res)=>{
+const product=await producto.findByIdAndDelete(req.params.id).lean()
+res.render("home");
+}   

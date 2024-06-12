@@ -1,19 +1,21 @@
 import { Router } from "express";
-import { renderProductForm, createNewProduct,renderProducts,renderEditForm,editProduct,deleteProduct,renderAlbumPage} from "../controllers/products.controller.js";
-const router =Router();
+import { renderProductForm, createNewProduct, renderProducts, renderEditForm, editProduct, deleteProduct, renderAlbumPage } from "../controllers/products.controller.js";
+import { isAuthenticated } from "../middlewares/auth.js";
 
-router.get('/addProduct',renderProductForm);
+const router = Router();
 
-router.post('/addProduct',createNewProduct);
+router.get('/addProduct', isAuthenticated, renderProductForm);
 
-router.get('/',renderProducts);
+router.post('/addProduct', isAuthenticated, createNewProduct);
 
-router.get('/edit/:id',renderEditForm);
+router.get('/', renderProducts);
 
-router.put('/edit/:id',editProduct);
+router.get('/edit/:id', isAuthenticated, renderEditForm);
 
-router.get('/albumPages/:id',renderAlbumPage);
+router.put('/edit/:id', isAuthenticated, editProduct);
 
-router.get('/delete/:id',deleteProduct);
+router.get('/albumPages/:id', renderAlbumPage);
+
+router.get('/delete/:id', isAuthenticated, deleteProduct);
 
 export default router;
