@@ -1,18 +1,26 @@
 <div id="rows" class="row">
+  <!-- Rayo izquierdo -->
   <div class="col">
     <div id="divrayo1"></div>
   </div>
-  <div id="main" class="col-sm-4">
-    <!-- Información entre efectos de la pagina -->
+
+  <div id="main" class="col-sm-4">      
     <div class="container">
       <div id="box-cuenta" class="box">
 
-       
-        <h1>
-           <div id="nameForm">
-            Cuenta
+        <div class="profile-header">
+          <img id="imgProfile" src="/static/Design/ProfileCharly.png" alt="Foto de perfil" class="profile-picture">
+          <div class="profile-info">
+              <h2>Mi cuenta </h2>
+              <p>Nombre: </p>
+              <p>Correo: {{Email}}</p>
           </div>
-        </h1>
+        </div>
+
+        <form id="logout" method="GET" action="logout">
+           <button type="submit" class="btn btn-outline-danger">Logout</button>
+        </form>
+
         <div id="atributosCuenta">
 
           <div class="mb-3">
@@ -45,20 +53,10 @@
               <a href="/recibos">
                   <button  type="submit" class="btn btn-outline-light">Ver recibos</button>
               </a>
-            
              </div>
-       
-           
             </div>
-           
-       
           </div>
-        <form id="logout" method="GET" action="logout">
-           <button type="submit" class="btn btn-outline-danger">Logout</button>
-        </form>
-         
         </div>
-       
       </div>
     </div>
     <!-- Fin de los efectos -->

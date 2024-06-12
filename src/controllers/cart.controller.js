@@ -98,8 +98,9 @@ export const renderRecibos = async (req, res) => {
 };
 
 export const comprar = async (req, res) => {
+  const user = req.user;
+
   try {
-    const user = req.user;
     const cart = await cartModel.findOne({ user: user }).populate({
       path: "products",
       populate: { path: "product" },
@@ -110,22 +111,14 @@ export const comprar = async (req, res) => {
     }
 
     if (cart.amount > user.wallet) {
-      return res.send("Saldo insuficiente");
-    } else {
-      createReceipt(user);
-  
-      user.wallet = user.wallet - cart.amount;
-      cart.amount = 0;
-  
-      await user.save();
-  
-      await cart.save();
-  
-      await cartModel.findByIdAndDelete(cartId);
+      res.send("Saldo insuficiente");
+      return;
     }
 
+    await createReceipt(user);
+
     for (const relation of cart.products) {
-      const product = await productModel.findById(relation.product._id);
+      const product = relation.product;
       if (product.stock < relation.quantity) {
         return res.status(400).send("Stock insuficiente para el producto: " + product.productName);
       }
@@ -133,11 +126,20 @@ export const comprar = async (req, res) => {
       await product.save();
     }
 
-    req.flash('success_msg', "Producto comprado con exito!")
-    res.redirect("/recibos");
+    user.wallet -= cart.amount;
 
+    cart.amount = 0;
+    cart.products = [];
+    await cart.save();
+
+    await user.save();
+
+    await cartModel.findByIdAndDelete(cart._id);
+
+    req.flash('success_msg', "Producto comprado con éxito!");
+    res.redirect("/recibos");
   } catch (error) {
-    console.error("Error al comprar:", error);
+    console.error("Error al realizar la compra:", error);
     res.status(500).send("Error al realizar la compra");
   }
 };
@@ -174,6 +176,7 @@ export const renderCart = async (req, res) => {
     res.status(500).send("Error al renderizar el carrito");
   }
 };
+
 
 export const addCart = async (req, res) => {
   try {
