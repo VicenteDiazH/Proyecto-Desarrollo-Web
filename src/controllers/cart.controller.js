@@ -7,7 +7,7 @@ import userModel from "../models/user.model.js";
 export const renderReceipts = async (req, res) => {
   try {
     const user = req.user;
-    const idUser=user.id;
+    const idUser = user.id;
     const userreceipt = await userModel.findById(idUser).populate({
       path: 'receipt',
       populate: {
@@ -21,9 +21,8 @@ export const renderReceipts = async (req, res) => {
     if (!userreceipt) {
       return res.status(404).send('Usuario no encontrado');
     }
-   console.log("receipts",userreceipt);
-
-  
+    console.log("receipts", userreceipt);
+    res.render('receipts', { userreceipt });
   } catch (error) {
     res.status(500).send('Error del servidor');
   }
@@ -55,7 +54,7 @@ export const crearReceipt = async (user) => {
     });
 
     await newreceipt.save();
-    user.receipts.push(newreceipt);
+    user.receipts.push(newreceipt._id);
     await user.save();
 
     return newreceipt;
@@ -65,26 +64,51 @@ export const crearReceipt = async (user) => {
   }
 };
 
-
 export const comprar = async (req, res) => {
-  const user = req.user;
-  const cart = await cartModel.findOne({ user: user });
-  const cartId = cart.id;
+  try {
+    const user = req.user;
+    const cart = await cartModel.findOne({ user: user }).populate({
+      path: "products",
+      populate: { path: "product" },
+    });
 
-  if (cart.amount > user.wallet) {
-    res.send("Saldo insuficiente");
-    return;
-  } else {
-    crearReceipt(user);
-    user.wallet = user.wallet - cart.amount;
+    if (!cart) {
+      return res.status(404).send("No se encontró el carrito");
+    }
+
+    if (cart.amount > user.wallet) {
+      return res.send("Saldo insuficiente");
+    }
+
+    // Crear recibo
+    const receipt = await crearReceipt(user);
+
+    // Restar el stock de los productos en el carrito
+    for (const relation of cart.products) {
+      const product = await productModel.findById(relation.product._id);
+      if (product.stock < relation.quantity) {
+        return res.status(400).send("Stock insuficiente para el producto: " + product.productName);
+      }
+      product.stock -= relation.quantity;
+      await product.save();
+    }
+
+    // Actualizar el saldo del usuario
+    user.wallet -= cart.amount;
+
+    // Vaciar el carrito
     cart.amount = 0;
-    await user.save();
+    cart.products = [];
     await cart.save();
-    await cartModel.findByIdAndDelete(cartId);
 
+    // Guardar los cambios en el usuario
+    await user.save();
+
+    res.redirect("/cart");
+  } catch (error) {
+    console.error("Error al comprar:", error);
+    res.status(500).send("Error al realizar la compra");
   }
- 
-  res.redirect("/cart");
 };
 
 export const renderCart = async (req, res) => {
@@ -92,13 +116,10 @@ export const renderCart = async (req, res) => {
     const user = req.user;
 
     // Encontrar el carrito del usuario y hacer populate de los productos
-    const cart = await cartModel
-      .findOne({ user: user })
-      .populate({
-        path: "products",
-        populate: { path: "product" }, // Populate del campo product en cartRelationModel
-      })
-      .exec();
+    const cart = await cartModel.findOne({ user: user }).populate({
+      path: "products",
+      populate: { path: "product" },
+    }).exec();
 
     if (!cart) {
       // Si no hay carrito, crear uno nuevo
@@ -232,6 +253,6 @@ export const removeCart = async (req, res) => {
     res.redirect("/cart");
   } catch (error) {
     console.log(error);
-    res.status(500).send("Error al añadir el producto al carrito");
+    res.status(500).send("Error al eliminar el producto del carrito");
   }
 };

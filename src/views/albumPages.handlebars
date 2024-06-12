@@ -10,7 +10,9 @@
                 <div class="product-details">
                     <h1 class="product-title">{{product.productName}}</h1>
                     <h2 class="product-subtitle">{{product.bandName}}</h2>
-                    <p class="product-price">${{product.price}}</p>
+                    <p class="product-stock">Stock: {{product.stock}}</p>
+                    <p class="product-price">Precio: ${{product.price}}</p>                    
+                    <p class="product-description">{{product.description}}</p>
                     {{#if user}}
                     <div id="comprar">
                         <form id="form1" action="/albumPages/{{product._id}}" method="POST">
@@ -25,7 +27,6 @@
                        
                     </div>
                     {{/if}}
-                    <p class="product-description">{{product.description}}</p>
                 </div>
             </div>
         </div>
