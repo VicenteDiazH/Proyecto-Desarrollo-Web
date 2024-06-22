@@ -1,4 +1,5 @@
 export const isAuthenticated = (req, res, next) => {
+    //console.log(req.isAuthenticated())
     if (req.isAuthenticated()) {
         return next();
     }
@@ -6,12 +7,11 @@ export const isAuthenticated = (req, res, next) => {
 }
 
 export const isAdmin = (req, res, next) => {
-    /* Vamos a utilizar este middleware luego de que se ejecute 
-    el de authenticate, por lo quepodemos acceder a req.user
-    (ya que authenticate) llena con la info del usuario */
-    const role = req.user.token.role
+    const role = req.user.role
+    //console.log(req.user)
     if(role === 'ADMIN'){
-        next()
+        console.log(role)
+        next();
     } else {
         return res.send('No autorizado!')
     }
