@@ -1,0 +1,59 @@
+<div id="rows" class="row">
+  <div class="col">
+    <div id="divrayo1"></div>
+  </div>
+  <div id="main" class="col-sm-4">
+    <!-- Información entre efectos de la pagina -->
+    <div class="container">
+      <div id="box-cart" >
+        <h1 id="tuCarrito">
+            Tu carrito
+        </h1>
+
+        {{#each productsToRender}}
+          <div  id="ola3">
+            <div id="card-cart" class="card-size" style="  background-color:  rgb(15, 15, 15);">
+              <div class="image-box">
+                <img id="imagen-card" src={{image}} class="card-img-top">
+              </div>
+              <div  class="card-body">
+                <h5 id="cards" class="card-title-color">{{productName}}</h5>
+                <h6 class="card-subtitle card-artist-color mb-2">{{bandName}}</h6>
+                <div id="cantidad-carrito">
+                  <p class="card-text-color">${{price}}</p>
+                  <div id="cantidad-carro">
+                    <form id="botones" action="/removeCart/{{_id}}" method="POST">
+                      <button class="bi bi-dash-lg"></button>
+                    </form>
+                    <p class="card-text-color">{{quantity}}</p>
+                    <form id="botones" action="/addCart/{{_id}}" method="POST">
+                      <button class="bi bi-plus-lg"></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>     
+        {{/each}}
+
+        <div id="pago">
+          <h1 id="totalPagar">
+            Total a pagar:
+          </h1>
+          <h2 class="card-text-color">${{amount}}</h2>     
+        </div>
+        <form  id="pagar" action="/cart" id="form2"  method="POST">
+          <button type="submit" class="btn btn-outline-light">Pagar</button>
+        </form>
+                
+    
+      </div>
+    </div>
+    <!-- Fin de los efectos -->
+    <div id="divv"></div>
+  </div>
+  <!-- Rayo derecho -->
+  <div class="col">
+    <div id="divrayo2"></div>
+  </div>
+</div>

@@ -1,25 +1,32 @@
 import { Router } from "express";
-import { renderProductForm, createNewProduct,renderProducts,renderEditForm,editProduct,deleteProduct} from "../controllers/products.controller.js";
-const router =Router();
+import { renderProductForm, createNewProduct, renderEditForm, editProduct, deleteProduct, renderAlbumPage } from "../controllers/products.controller.js";
+import { isAuthenticated, isAdmin } from "../middlewares/auth.js";
 
-router.get('/addProduct',renderProductForm);
+const router = Router();
 
-router.post('/add',createNewProduct);
+router.get('/addProduct', [isAuthenticated, isAdmin], renderProductForm);
 
-router.get('/products', async (req, res) => {
-    try {
-        const products = await Product.find();
-        res.render('products', { products });
-    } catch (error) {
-        console.error(error);
-        res.status(500).send("Error retrieving products");
+router.post('/addProduct',  createNewProduct);
+
+router.get('/', async (req,res)=> {
+    try{
+        const productos =await productos.find().lean();
+        return res.json({
+            productos,
+        });
+    } catch (error){
+        return res.status(500).json({
+            success: false,
+        });
     }
 });
 
-router.get('/edit/:id',renderEditForm);
+router.get('/edit/:id', [isAuthenticated, isAdmin], renderEditForm);
 
-router.put('/edit/:id',editProduct);
+router.put('/edit/:id', [isAuthenticated, isAdmin], editProduct);
 
-router.delete('delete/:id',deleteProduct)
+router.get('/albumPages/:id', renderAlbumPage);
+
+router.get('/delete/:id', [isAuthenticated, isAdmin], deleteProduct);
 
 export default router;

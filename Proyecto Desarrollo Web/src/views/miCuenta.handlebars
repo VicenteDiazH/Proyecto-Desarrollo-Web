@@ -1,0 +1,69 @@
+<div id="rows" class="row">
+  <!-- Rayo izquierdo -->
+  <div class="col">
+    <div id="divrayo1"></div>
+  </div>
+
+  <div id="main" class="col-sm-4">      
+    <div class="container">
+      <div id="box-cuenta" class="box">
+
+        <div class="profile-header">
+          <img id="imgProfile" src="/static/Design/ProfileCharly.png" alt="Foto de perfil" class="profile-picture">
+          <div class="profile-info">
+              <h2>Mi cuenta </h2>
+              <p>Nombre: </p>
+              <p>Correo: {{Email}}</p>
+          </div>
+        </div>
+
+        <form id="logout" method="GET" action="logout">
+           <button type="submit" class="btn btn-outline-danger">Logout</button>
+        </form>
+
+        <div id="atributosCuenta">
+
+          <div class="mb-3">
+            <div id="wallet">
+              <div id="wallets">
+
+              <h1 id="walletIcon" class="bi bi-wallet2"></h1>
+             <h3>
+                Wallet:
+             </h3>
+               <h3 id="dineroWallet">
+                ${{wallet}}
+             </h3>
+              </div>
+             <div id="añadirDinero">
+              <a href="/wallet">
+                  <button  type="submit" class="btn btn-outline-light">Añadir dinero </button>
+              </a>
+            
+             </div>
+             <div id="wallets">
+
+              <h1 class="bi bi-receipt"></h1>
+             <h3>
+                Recibos:
+             </h3>
+               
+              </div>
+             <div id="añadirDinero">
+              <a href="/recibos">
+                  <button  type="submit" class="btn btn-outline-light">Ver recibos</button>
+              </a>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin de los efectos -->
+    <div id="divv"></div>
+  </div>
+  <div class="col">
+    <div id="divrayo2"></div>
+  </div>
+</div>
+{{>footer}}

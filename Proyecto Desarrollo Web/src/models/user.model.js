@@ -5,6 +5,8 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  wallet: { type: Number, default: 0, required: true },
+  role: { type: String, enum: ['USER', 'ADMIN'], default: 'USER' }
 });
 
 userSchema.methods.encryptPassword = async function (password) {
