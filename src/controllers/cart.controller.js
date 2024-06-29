@@ -12,8 +12,9 @@ export const createReceipt = async (user) => {
     });
 
     if (!cart) {
-      console.error("No se encontró ningún carrito para el usuario:");
-      return null;
+      return res.status(500).json({
+        success: false,
+      });
     }
 
     const productsReceipt = cart.products.map((relation) => ({
@@ -54,9 +55,16 @@ export const createReceipt = async (user) => {
       await receiptUser.save();
     }
 
-    console.log("receipt added: ", receiptUser);
+    return res.json({
+      success: true,
+      receiptUser,
+      jwt: token
+    });
+
   } catch (error) {
-    console.log(error);
+    return res.status(500).json({
+      success: false,
+    });
   }
 };
 
@@ -75,7 +83,9 @@ export const renderRecibos = async (req, res) => {
       });
 
     if (!receiptUser) {
-      return res.status(404).send("Usuario no encontrado");
+      return res.status(403).json({
+        success: false,
+      });
     }
 
     const receiptToRender = receiptUser.receipt.map((receipt) => ({
@@ -88,69 +98,16 @@ export const renderRecibos = async (req, res) => {
       })),
     }));
 
-    console.log("recibos", receiptUser);
-
     res.render("recibos", { receiptToRender });
-  } catch (error) {
-    console.log(error);
-    res.status(500).send("Error del servidor");
-  }
-};
-
-export const comprar = async (req, res) => {
-  const user = req.user;
-
-  try {
-    const cart = await cartModel.findOne({ user: user }).populate({
-      path: "products",
-      populate: { path: "product" },
+    return res.json({
+      receiptUser,
     });
-
-    if (!cart) {
-      return res.status(400).json({
-        message: "Bad Request: No se encontró el carrito.",
-        success: false,
-    })
-    }
-
-    if (cart.amount > user.wallet) {
-      return res.status(400).json({
-        message: "Bad Request: No hay suficiente sueldo",
-        success: false,
-      })
-    }
-
-    await createReceipt(user);
-
-    for (const relation of cart.products) {
-      const product = relation.product;
-      if (product.stock < relation.quantity) {
-        return res.status(400).json({
-          message: "Bad Request: Saldo insuficiente para el carrito.",
-          success: false,
-      })
-      }
-      product.stock -= relation.quantity;
-      await product.save();
-    }
-
-    user.wallet -= cart.amount;
-
-    cart.amount = 0;
-    cart.products = [];
-    await cart.save();
-
-    await user.save();
-
-    await cartModel.findByIdAndDelete(cart._id);
-
-    return res.status(400).json({
-      success: true,
-    })
+    
   } catch (error) {
-    return res.status(400).json({
+    return res.status(500).json({
+      message: "Server Error",
       success: false,
-  })
+    });
   }
 };
 

@@ -22,8 +22,19 @@ export const logout = (req, res) => {
   });
 };
 
-export const renderWallet = (req, res) => {
-  res.render("wallet");
+export const renderWallet = async (req, res) => {
+    try {
+      const userId = req.user.id;
+      const wallet = await walletModel.findOne({ user: userId }).lean();
+      return res.json({
+        success: true,
+        wallet,
+      });
+    } catch (error) {
+      return res.status(500).json({
+        success: false,
+      });
+    }
 };
 export const addWallet = async (req, res) => {
 try{
