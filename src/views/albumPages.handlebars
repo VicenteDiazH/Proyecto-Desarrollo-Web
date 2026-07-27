@@ -20,12 +20,14 @@
                         </form>
                        
                     </div>
+                        {{#if user.isAdmin}}
                         <div id="comprar">
                         <form id="form1" action="/delete/{{product._id}}" method="GET">
                             <button type="submit" class="btn btn-outline-danger">Eliminar producto de la base de datos</button>
                         </form>
                        
                     </div>
+                        {{/if}}
                     {{/if}}
                 </div>
             </div>
@@ -36,4 +38,3 @@
         <div id="divrayo2"></div>
     </div>
 </div>
-{{>footer}}

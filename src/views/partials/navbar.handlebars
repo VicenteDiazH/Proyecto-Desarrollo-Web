@@ -10,12 +10,14 @@
       <img id="logoTienda" src="/static/Design/logotienda.png">
     </a>
     <div class="micuenta">
+      {{#if user.isAdmin}}
       <a id="clean-text" href="/addProduct" class="navlink">
         <img id="logoVinilo" src="/static/Design/viniloLogo.png" />
         <p id="gestionProductos">
           Gestion de productos
         </p>
       </a>
+      {{/if}}
       <a id="clean-text" href="/cart" class="navlink">
         <img id="carro" src="/static/Design/carrito.png" />
         <p id="carrito">

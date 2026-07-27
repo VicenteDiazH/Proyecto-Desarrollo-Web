@@ -11,16 +11,24 @@
   margin-top: 60px;
 
 }
-body{
+html, body{
   background-color: rgb(15, 15, 15);
   text-decoration: none;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  margin-top: auto;
 }
 #navb{
- 
   background-color: rgb(15, 15, 15);
   border-bottom: 1px solid #fff;
   border-color: rgb(51, 51, 51);
   height: 90px;
+  display: flex;
+  align-items: center;
 }
 a{
   color: white;
@@ -35,8 +43,9 @@ a{
 
 
 #img1{
+  width: 100%;
   height: 600px;
-  width: 1000px;
+  object-fit: cover;
 }
 
 .card-size{
@@ -72,12 +81,40 @@ padding-top: 100px;
 }
 
 #form1{
-padding-left: 150px;  
+display: flex;
+flex-direction: column;
+align-items: center;
 padding-top: 25px;
+width: 100%;
+max-width: 380px;
+}
+#form1 .mb-3 {
+  width: 100%;
+}
+#form1 .form-label {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+#form1 .form-control {
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+#form1 button[type="submit"] {
+  padding: 8px 28px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+#yatienescuenta {
+  font-size: 1rem;
 }
 #box-login{
-height: 300px;
-padding-bottom: 550px;
+height: auto;
+padding: 20px 20px 40px 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 #divrayo1{
@@ -111,37 +148,40 @@ height: max-content;
   padding-bottom: 40px;
 }
 #sech{
-  width: 1000px;
+  width: 100%;
 }
 
 #mic{
-  padding-left: 5px;
-  display: grid;
-  height: 50px;
+  height: 45px;
+  width: auto;
 }
 
 .micuenta{
   padding-left: 10px;
-  display:flex;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 #loginregister{
-
-  display: grid;
-  height: 50px;
-  padding-left: 15px;
+  height: 45px;
+  width: auto;
 }
 #micuentaa{
   font-family: sans-serif;
-  padding-right: 20px;
   font-size: small;
   font-weight:lighter;
-   text-decoration: none;
-   font-stretch: ultra-condensed;
-   font-size: small;
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
 }
 
 #clean-text{
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
 }
 
 #imagen-producto{
@@ -159,29 +199,43 @@ form{
 #tienda{
   font-family:"ola2", Arial, Helvetica, sans-serif;
   justify-content: center;
-  padding-right: 1000px;
+  align-items: center;
+  padding-right: 20px;
+  margin-right: auto;
   font-size:xx-large;
-  padding-bottom: 10px;
   display: flex;
-  
+  gap: 10px;
+}
+#tienda h1{
+  padding: 0;
+  margin: 0;
 }
 
 #name{
   justify-content: center;
  padding-right: 10px;
- padding-bottom: 10px;
  font-family: "ola2";
+ font-size: 2.8rem;
 }
 #nameForm{
   justify-content: center;
- padding-right: 10px;
- padding-bottom: 15px;
+ padding-bottom: 20px;
  font-family: "ola2";
+ font-size: 3rem;
  color: #fff;
 }
 
 #box-addform{
-padding-bottom: 50px;
+padding: 40px;
+padding-bottom: 550px;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
+#addproductform{
+width: 100%;
+max-width: 500px;
 }
 #logoTienda{
   height: 65px;
@@ -214,7 +268,7 @@ padding-top: 15px;
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: open sans,sans-serif;
+  font-family: 'Inter', sans-serif;
   font-display: swap;
 }
 .titulo_marca {
@@ -234,8 +288,9 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  align-items: flex-start;
+  min-height: auto;
+  padding-top: 20px;
   background-color: rgb(15, 15, 15);
 }
 
@@ -286,12 +341,11 @@ body {
 }
 #login_register{
   font-family: sans-serif;
-padding-right: 10px;
   font-size: small;
   font-weight:lighter;
-   text-decoration: none;
-   font-stretch: ultra-condensed;
-   font-size: small;
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
 }
 
 .product-price {
@@ -310,18 +364,16 @@ padding-right: 10px;
 }
 
 #carro{
-padding-right: 10px;
-display: grid;
-height: 50px;
+height: 45px;
+width: auto;
 }
 #carrito{
 font-family: sans-serif;
-padding-left: 7px;
 font-size: small;
 font-weight:lighter;
- text-decoration: none;
- font-stretch: ultra-condensed;
- font-size: small;
+text-decoration: none;
+text-align: center;
+margin: 0;
 }
 #tucarrito{
 justify-content: center;
@@ -370,27 +422,22 @@ padding-bottom: 24px;
 
 }
 #logoVinilo{
-padding-left: 40px;
-display: grid;
-height: 50px;
+height: 45px;
+width: auto;
 }
 
 #gestionProductos{
-padding-right: 10px;
-  font-family: sans-serif;
-  font-size: small;
-  font-weight:lighter;
-   text-decoration: none;
-   font-stretch: ultra-condensed;
-   font-size: small;
-
+font-family: sans-serif;
+font-size: small;
+font-weight:lighter;
+text-decoration: none;
+text-align: center;
+margin: 0;
 }
 
 #totalPagar{
 justify-content:left;
 padding-right: 10px;
-
-font-family: "ola2";
 color: #fff;
 }
 #pago{
@@ -406,20 +453,20 @@ padding-top: 25px;
  padding-top: 50px;
     justify-content:center;
    padding-right: 10px;
-  
-   font-family: "ola2";
    color: #fff;
   
 }
 #atributosCuenta{
-padding-left: 20px;
-padding-top: 50px;
-
+padding-top: 30px;
+width: 100%;
 }
 #box-cuenta{
-height: 300px;
+height: auto;
+padding: 30px;
 padding-bottom: 550px;
-display: grid;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 #wallet{
 align-items: center   ;
@@ -428,10 +475,10 @@ display: grid;
 
 }
 #añadirDinero{
-padding-left:40px ;
+padding-left: 20px;
 }
 #logout{
-  padding-left: 185px;
+  margin-top: 10px;
 }
 #dineroWallet{
 padding-left:10px ;
@@ -445,7 +492,9 @@ align-items: center;
 display: flex;
 }
 #pagar{
-padding-left: 52px;
+display: flex;
+justify-content: center;
+padding-top: 25px;
 }
 #recibo{
 padding-top: 30px;
@@ -514,4 +563,30 @@ margin-bottom: 10px;
 }
 .profile-actions button:hover {
     background-color: #555;
+}
+
+/* Mi Cuenta sections */
+.cuenta-seccion {
+  width: 100%;
+  padding-top: 25px;
+  border-top: 1px solid #333;
+  margin-top: 25px;
+}
+.cuenta-titulo {
+  color: #fff;
+  padding-bottom: 15px;
+  font-weight: 600;
+}
+.cuenta-form {
+  width: 100%;
+}
+.cuenta-form .form-label {
+  color: #fff;
+}
+.cuenta-fila {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  padding-bottom: 10px;
 }

@@ -1,8 +1,24 @@
 {{#if success_msg}}
-<div class="alert alert-success alert-dismissible fade show" role="alert">
+<div class="alert alert-success alert-dismissible fade show my-3 mx-auto" style="max-width: 600px; width: 90%; text-align: center;" role="alert">
     {{success_msg}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 {{/if}}
+{{#if error_msg}}
+<div class="alert alert-danger alert-dismissible fade show my-3 mx-auto" style="max-width: 600px; width: 90%; text-align: center;" role="alert">
+    {{error_msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+{{#if error}}
+<div class="alert alert-danger alert-dismissible fade show my-3 mx-auto" style="max-width: 600px; width: 90%; text-align: center;" role="alert">
+    {{error}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show my-3 mx-auto" style="max-width: 600px; width: 90%; text-align: center;" role="alert">
+    {{text}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/each}}

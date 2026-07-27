@@ -42,6 +42,7 @@
   <div class="col-12">
             <h3 class="mt-2 mb-4 a" style="color: white;">Nuestros productos:</h3>
           </div>
+{{#if productos.length}}
 {{#each productos}}
    <div class="col-sm-4">
             <div id="ola1">
@@ -63,6 +64,11 @@
             </div>
           </div>
 {{/each}}
+{{else}}
+<div class="col-12">
+  <p style="color: #aaa; text-align: center; padding: 30px 0; font-size: 1.1rem;">No hay productos disponibles por el momento.</p>
+</div>
+{{/if}}
       </div>
      
     

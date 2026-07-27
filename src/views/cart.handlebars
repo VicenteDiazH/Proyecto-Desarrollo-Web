@@ -10,6 +10,7 @@
             Tu carrito
         </h1>
 
+        {{#if productsToRender.length}}
         {{#each productsToRender}}
           <div  id="ola3">
             <div id="card-cart" class="card-size" style="  background-color:  rgb(15, 15, 15);">
@@ -35,6 +36,12 @@
             </div>
           </div>     
         {{/each}}
+        {{else}}
+          <div style="text-align: center; padding: 30px 0;">
+            <p style="color: #aaa; font-size: 1.1rem;">Tu carrito está vacío.</p>
+            <a href="/" class="btn btn-outline-light mt-2">Explorar productos</a>
+          </div>
+        {{/if}}
 
         <div id="pago">
           <h1 id="totalPagar">

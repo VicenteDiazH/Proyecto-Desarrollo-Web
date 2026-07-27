@@ -8,17 +8,18 @@ passport.use(
     {
       usernameField: "email",
       passwordField: "password",
+      badRequestMessage: "Por favor, ingresa tu correo y contraseña.",
     },
     async (email, password, done) => {
       const user = await User.findOne({ email });
       if (!user) {
-        return done(null, false, { message: "Not user Found" });
+        return done(null, false, { message: "Usuario no encontrado" });
       } else {
         const match = await user.matchPassword(password);
         if (match) {
           return done(null, user);
         } else {
-          return done(null, false, { message: "Incorrect password" });
+          return done(null, false, { message: "Contraseña incorrecta" });
         }
       }
     }

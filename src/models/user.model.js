@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   wallet: { type: Number, default: 0, required: true },
-  role: { type: String, enum: ['USER', 'ADMIN'], default: 'USER' }
+  role: { type: String, enum: ['USER', 'ADMIN'], default: 'USER' },
+  profilePicture: { type: String, default: '/static/Design/ProfileCharly.png' }
 });
 
 userSchema.methods.encryptPassword = async function (password) {
