@@ -37,10 +37,10 @@ Plataforma e-commerce web de venta de discos de vinilo y álbumes musicales desa
 npm install
 
 # 2. Configurar variables de entorno (.env)
-# El archivo .env debe ubicarse en la raíz del proyecto con la siguiente estructura:
-MONGODB_URI=mongodb+srv://benjapolanco58_db_user:SHy1syW1wlUalhbu@portafolio.a6qr325.mongodb.net/tienda?retryWrites=true&w=majority&appName=portafolio
+# Crear un archivo llamado .env en la raíz con la siguiente estructura:
+MONGODB_URI=tu_cadena_de_conexion_mongodb_aqui
 PORT=3000
-SESSION_SECRET=proyecto-desarrollo-web-secret-key-2024
+SESSION_SECRET=tu_clave_secreta_para_sesion
 
 # 3. Iniciar el servidor
 npm start
